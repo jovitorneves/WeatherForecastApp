@@ -13,6 +13,7 @@ extension Int {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EE"
+        dateFormatter.timeZone = TimeZone(identifier: "America/Sao_Paulo")
         
         return dateFormatter.string(from: date)
     }
@@ -21,6 +22,7 @@ extension Int {
         let date = Date(timeIntervalSince1970: TimeInterval(self))
         
         let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(identifier: "America/Sao_Paulo")
         dateFormatter.dateFormat = "HH:mm"
         
         return dateFormatter.string(from: date)

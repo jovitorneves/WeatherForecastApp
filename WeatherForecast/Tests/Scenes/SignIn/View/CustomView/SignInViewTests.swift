@@ -1,6 +1,6 @@
 //
 //  SignInViewTests.swift
-//  WeatherForecastUITests
+//  WeatherForecastTests
 //
 //  Created by J. Vitor Neves on 19/09/24.
 //
@@ -8,51 +8,64 @@
 import XCTest
 @testable import WeatherForecast
 
-class LoginViewTests: XCTestCase {
+class SignInViewTests: XCTestCase {
 
-    var viewModel: MockSignInViewModel!
     var signInView: SignInView!
-    
-    override func setUpWithError() throws {
-        viewModel = MockSignInViewModel()
-        
-        signInView = SignInView(viewModel: viewModel)
-        
-        let window = UIWindow()
-        window.addSubview(signInView)
+    var mockViewModel: SignInViewModelSpy!
+
+    override func setUp() {
+        super.setUp()
+        mockViewModel = SignInViewModelSpy()
+        signInView = SignInView(viewModel: mockViewModel)
+        signInView.layoutIfNeeded()
     }
 
-    override func tearDownWithError() throws {
-        viewModel = nil
+    override func tearDown() {
         signInView = nil
+        mockViewModel = nil
+        super.tearDown()
     }
     
-    func testSubviewsAdded() throws {
-        XCTAssertTrue(signInView.subviews.contains(signInView.scrollView), "ScrollView não foi adicionado")
-        XCTAssertTrue(signInView.scrollView.subviews.contains(signInView.contentView), "ContentView não foi adicionado à ScrollView")
-        XCTAssertTrue(signInView.contentView.subviews.contains(signInView.stackView), "StackView não foi adicionado à ContentView")
-        XCTAssertTrue(signInView.stackView.arrangedSubviews.contains(signInView.titleSignIn), "Label não foi adicionada à StackView")
+    func testSignInViewInitialization() {
+        XCTAssertNotNil(signInView.scrollView)
+        XCTAssertNotNil(signInView.contentView)
+        XCTAssertNotNil(signInView.stackView)
+        XCTAssertNotNil(signInView.titleSignIn)
+        XCTAssertNotNil(signInView.emailTextField)
+        XCTAssertNotNil(signInView.passwordTextField)
+        XCTAssertNotNil(signInView.signUpButton)
+        XCTAssertNotNil(signInView.signInButton)
     }
-}
 
-class MockSignInViewModel: SignInViewModel {
-    var stateViewModel: WeatherForecast.Bindable<SignInStatesEnum?> = Bindable(nil)
-    
-    var openLoginCalled = false
-    
-    init() {
-        
+    func testOpenSignUpAction() {
+        signInView.signUpButton.sendActions(for: .touchUpInside)
+        signInView.signInButton.sendActions(for: .touchDown)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            XCTAssertTrue(self.mockViewModel.didCallOpenSignUp)
+        }
     }
-    
-    func openLogin() {
-        openLoginCalled = true
-    }
-    
-    func openSignUp() {
+
+    func testValidationLoginActionWithValidCredentials() {
+        signInView.emailTextField.text = "test@example.com"
+        signInView.passwordTextField.text = "password123"
         
-    }
-    
-    func validationLogin(email: String, password: String) {
+        signInView.signInButton.sendActions(for: .touchUpInside)
+        signInView.signInButton.sendActions(for: .touchDown)
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            XCTAssertTrue(self.mockViewModel.didCallValidationLogin)
+            XCTAssertEqual(self.mockViewModel.email, "test@example.com")
+            XCTAssertEqual(self.mockViewModel.password, "password123")
+        }
+    }
+
+    func testValidationLoginActionWithEmptyCredentials() {
+        signInView.emailTextField.text = ""
+        signInView.passwordTextField.text = ""
+
+        signInView.signInButton.sendActions(for: .touchUpInside)
+        signInView.signInButton.sendActions(for: .touchDown)
+
+        XCTAssertFalse(mockViewModel.didCallValidationLogin)
     }
 }

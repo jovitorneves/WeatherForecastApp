@@ -19,7 +19,7 @@ class DailyForecastTableViewCell: UITableViewCell {
     }
     
     // MARK: - Views
-    private lazy var weekDayLabel: UILabel = {
+    private(set) lazy var weekDayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.contrastColor
@@ -28,7 +28,7 @@ class DailyForecastTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var minTemperatureLabel: UILabel = {
+    private(set) lazy var minTemperatureLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.contrastColor
@@ -37,7 +37,7 @@ class DailyForecastTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var maxTemperatureLabel: UILabel = {
+    private(set) lazy var maxTemperatureLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.contrastColor
@@ -46,14 +46,14 @@ class DailyForecastTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var iconImageView: UIImageView = {
+    private(set) lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
-    private lazy var stackView: UIStackView = {
+    private(set) lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [weekDayLabel,
                                                        iconImageView,
                                                        minTemperatureLabel,

@@ -45,7 +45,7 @@ class SignInView: UIView {
         return label
     }()
     
-    private let emailTextField: UITextField = {
+    private(set) lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = LocalizableWeatherForecast.emailPlaceholder.localized
         textField.borderStyle = .roundedRect
@@ -55,7 +55,7 @@ class SignInView: UIView {
         return textField
     }()
     
-    private let passwordTextField: UITextField = {
+    private(set) lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = LocalizableWeatherForecast.passwordPlaceholder.localized
         textField.isSecureTextEntry = true

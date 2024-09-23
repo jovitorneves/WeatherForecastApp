@@ -10,7 +10,7 @@ import UIKit
 class SignUpViewController: UIViewController {
 
     // MARK: - Custom Views
-    private lazy var stackView: UIStackView = {
+    private(set) lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = .zero

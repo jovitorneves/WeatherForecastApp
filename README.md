@@ -50,8 +50,6 @@ WeatherForecastApp
 │
 ├── WeatherForecast-Sample
 │
-├── WeatherForecastTests
-│
 ├── WeatherForecastUITests 
 │
 ```
