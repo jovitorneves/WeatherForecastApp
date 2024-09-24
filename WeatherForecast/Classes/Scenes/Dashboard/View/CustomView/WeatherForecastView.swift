@@ -31,6 +31,7 @@ class WeatherForecastView: UIView {
         label.font = UIFont.systemFont(ofSize: Constants.twentyValue)
         label.textAlignment = .center
         label.textColor = UIColor.primaryColor
+        label.accessibilityIdentifier = LocalizableWeatherForecast.cityLabelAccessibilityIdentifier.localized
         return label
     }()
     
@@ -41,6 +42,7 @@ class WeatherForecastView: UIView {
                                        weight: .bold)
         label.textAlignment = .left
         label.textColor = UIColor.primaryColor
+        label.accessibilityIdentifier = LocalizableWeatherForecast.temperatureLabelAccessibilityIdentifier.localized
         return label
     }()
     
@@ -58,6 +60,7 @@ class WeatherForecastView: UIView {
         label.font = UIFont.systemFont(ofSize: Constants.twelveValue,
                                        weight: .semibold)
         label.textColor = UIColor.contrastColor
+        label.accessibilityIdentifier = LocalizableWeatherForecast.humidityLabelAccessibilityIdentifier.localized
         return label
     }()
     
@@ -67,6 +70,7 @@ class WeatherForecastView: UIView {
         label.font = UIFont.systemFont(ofSize: Constants.twelveValue,
                                        weight: .semibold)
         label.textColor = UIColor.contrastColor
+        label.accessibilityIdentifier = LocalizableWeatherForecast.humidityValueLabelAccessibilityIdentifier.localized
         return label
     }()
     
@@ -85,6 +89,7 @@ class WeatherForecastView: UIView {
         label.font = UIFont.systemFont(ofSize: Constants.twelveValue,
                                        weight: .semibold)
         label.textColor = UIColor.contrastColor
+        label.accessibilityIdentifier = LocalizableWeatherForecast.windLabelAccessibilityIdentifier.localized
         return label
     }()
     
@@ -94,6 +99,7 @@ class WeatherForecastView: UIView {
         label.font = UIFont.systemFont(ofSize: Constants.twelveValue,
                                        weight: .semibold)
         label.textColor = UIColor.contrastColor
+        label.accessibilityIdentifier = LocalizableWeatherForecast.windValueLabelAccessibilityIdentifier.localized
         return label
     }()
     
@@ -129,6 +135,7 @@ class WeatherForecastView: UIView {
         label.font = UIFont.systemFont(ofSize: Constants.twelveValue,
                                        weight: .semibold)
         label.textAlignment = .center
+        label.accessibilityIdentifier = LocalizableWeatherForecast.hourlyForecastLabelAccessibilityIdentifier.localized
         return label
     }()
     
@@ -160,6 +167,7 @@ class WeatherForecastView: UIView {
         label.font = UIFont.systemFont(ofSize: Constants.twelveValue,
                                        weight: .semibold)
         label.textAlignment = .center
+        label.accessibilityIdentifier = LocalizableWeatherForecast.dailyForecastLabelAccessibilityIdentifier.localized
         return label
     }()
     
@@ -385,12 +393,14 @@ extension WeatherForecastView: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
+        guard let _ = forecastResponse?.hourly[indexPath.row] else { return UICollectionViewCell() }
         let forecast = forecastResponse?.hourly[indexPath.row]
         cell.loadData(time: forecast?.dt.toHourFormat(),
                       icon: UIImage(named: forecast?.weather.first?.icon ?? String(),
                                     in: Bundle(for: WeatherForecastViewController.self),
                                     compatibleWith: .none),
-                      temp: forecast?.temp.toCelsius())
+                      temp: forecast?.temp.toCelsius(),
+                      index: indexPath.row)
         return cell
     }
 }
@@ -409,13 +419,15 @@ extension WeatherForecastView: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
+        guard let _ = forecastResponse?.daily[indexPath.row] else { return UITableViewCell() }
         let forecast = forecastResponse?.daily[indexPath.row]
         cell.loadData(weekDay: forecast?.dt.toWeekdayName().uppercased(),
                       min: forecast?.temp.min.toCelsius(),
                       max: forecast?.temp.max.toCelsius(),
                       icon: UIImage(named: forecast?.weather.first?.icon ?? String(),
                                     in: Bundle(for: WeatherForecastViewController.self),
-                                    compatibleWith: .none))
+                                    compatibleWith: .none),
+                      index: indexPath.row)
         
         return cell
     }

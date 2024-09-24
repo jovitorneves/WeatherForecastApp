@@ -23,6 +23,17 @@
         }
       }
     },
+    "cityLabelAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "cityLabelAccessibilityIdentifier"
+          }
+        }
+      }
+    },
     "confirmPasswordPlaceholder" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -30,6 +41,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Repeat password"
+          }
+        }
+      }
+    },
+    "confirmPasswordTextFieldAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "confirmPasswordTextFieldAccessibilityIdentifier"
           }
         }
       }
@@ -45,6 +67,17 @@
         }
       }
     },
+    "dailyForecastLabelAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dailyForecastLabelAccessibilityIdentifier"
+          }
+        }
+      }
+    },
     "emailPlaceholder" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -52,6 +85,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Email"
+          }
+        }
+      }
+    },
+    "emailTextFieldAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "emailTextFieldAccessibilityIdentifier"
           }
         }
       }
@@ -67,6 +111,17 @@
         }
       }
     },
+    "hourLabelAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hourLabelAccessibilityIdentifier"
+          }
+        }
+      }
+    },
     "hourlyForecastLabel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -74,6 +129,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hourly Forecast"
+          }
+        }
+      }
+    },
+    "hourlyForecastLabelAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hourlyForecastLabelAccessibilityIdentifier"
           }
         }
       }
@@ -89,6 +155,28 @@
         }
       }
     },
+    "humidityLabelAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "humidityLabelAccessibilityIdentifier"
+          }
+        }
+      }
+    },
+    "humidityValueLabelAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "humidityValueLabelAccessibilityIdentifier"
+          }
+        }
+      }
+    },
     "initView" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -96,6 +184,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "init(coder:) has not been implemented"
+          }
+        }
+      }
+    },
+    "loaderAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "loaderAccessibilityIdentifier"
+          }
+        }
+      }
+    },
+    "maxTemperatureLabelAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "maxTemperatureLabelAccessibilityIdentifier"
+          }
+        }
+      }
+    },
+    "minTemperatureLabelAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "minTemperatureLabelAccessibilityIdentifier"
           }
         }
       }
@@ -111,6 +232,17 @@
         }
       }
     },
+    "passwordTextFieldAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "passwordTextFieldAccessibilityIdentifier"
+          }
+        }
+      }
+    },
     "signInButton" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -118,6 +250,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sign-In"
+          }
+        }
+      }
+    },
+    "signInButtonAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "signInButtonAccessibilityIdentifier"
           }
         }
       }
@@ -133,6 +276,28 @@
         }
       }
     },
+    "signUpButtonAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "signUpButtonAccessibilityIdentifier"
+          }
+        }
+      }
+    },
+    "temperatureLabelAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "temperatureLabelAccessibilityIdentifier"
+          }
+        }
+      }
+    },
     "titleAppLabel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -144,13 +309,24 @@
         }
       }
     },
-    "userErrorMsg" : {
+    "titleScreenAccessibilityIdentifier" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "User not found"
+            "value" : "titleScreenAccessibilityIdentifier"
+          }
+        }
+      }
+    },
+    "weekDayLabelAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "weekDayLabelAccessibilityIdentifier"
           }
         }
       }
@@ -162,6 +338,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wind"
+          }
+        }
+      }
+    },
+    "windLabelAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "windLabelAccessibilityIdentifier"
+          }
+        }
+      }
+    },
+    "windValueLabelAccessibilityIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "windValueLabelAccessibilityIdentifier"
           }
         }
       }

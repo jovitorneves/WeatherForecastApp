@@ -42,12 +42,14 @@ class SignInView: UIView {
         label.font = .preferredFont(forTextStyle: .largeTitle)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = LocalizableWeatherForecast.titleScreenAccessibilityIdentifier.localized
         return label
     }()
     
     private(set) lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = LocalizableWeatherForecast.emailPlaceholder.localized
+        textField.accessibilityIdentifier = LocalizableWeatherForecast.emailTextFieldAccessibilityIdentifier.localized
         textField.borderStyle = .roundedRect
         textField.keyboardType = .emailAddress
         textField.autocapitalizationType = .none
@@ -58,6 +60,7 @@ class SignInView: UIView {
     private(set) lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = LocalizableWeatherForecast.passwordPlaceholder.localized
+        textField.accessibilityIdentifier = LocalizableWeatherForecast.passwordTextFieldAccessibilityIdentifier.localized
         textField.isSecureTextEntry = true
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -73,6 +76,7 @@ class SignInView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .contrastColor
         button.layer.cornerRadius = Constants.twentyValue
+        button.accessibilityIdentifier = LocalizableWeatherForecast.signUpButtonAccessibilityIdentifier.localized
         return button
     }()
     
@@ -85,6 +89,7 @@ class SignInView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .contrastColor
         button.layer.cornerRadius = Constants.twentyValue
+        button.accessibilityIdentifier = LocalizableWeatherForecast.signInButtonAccessibilityIdentifier.localized
         return button
     }()
     

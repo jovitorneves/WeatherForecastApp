@@ -37,6 +37,7 @@ class WeatherForecastViewController: UIViewController {
     private(set) lazy var loader: UIActivityIndicatorView = {
         let loader = UIActivityIndicatorView(style: .large)
         loader.translatesAutoresizingMaskIntoConstraints = false
+        loader.accessibilityIdentifier = LocalizableWeatherForecast.loaderAccessibilityIdentifier.localized
         return loader
     }()
     

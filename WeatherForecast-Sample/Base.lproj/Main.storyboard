@@ -35,6 +35,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLw-Th-F71">
                                 <rect key="frame" x="51.666666666666657" y="408.66666666666669" width="290" height="35"/>
+                                <accessibility key="accessibilityConfiguration" identifier="openFrameworkButton" label="openFrameworkButton"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Open Weather Forecast framework"/>
                                 <connections>

@@ -23,6 +23,25 @@ enum LocalizableWeatherForecast: String, Localizable {
     case hourlyForecastLabel
     case dailyForecastLabel
     case errorAPI
+    case titleScreenAccessibilityIdentifier
+    case emailTextFieldAccessibilityIdentifier
+    case passwordTextFieldAccessibilityIdentifier
+    case signUpButtonAccessibilityIdentifier
+    case signInButtonAccessibilityIdentifier
+    case confirmPasswordTextFieldAccessibilityIdentifier
+    case loaderAccessibilityIdentifier
+    case cityLabelAccessibilityIdentifier
+    case temperatureLabelAccessibilityIdentifier
+    case humidityLabelAccessibilityIdentifier
+    case humidityValueLabelAccessibilityIdentifier
+    case windLabelAccessibilityIdentifier
+    case windValueLabelAccessibilityIdentifier
+    case hourlyForecastLabelAccessibilityIdentifier
+    case dailyForecastLabelAccessibilityIdentifier
+    case hourLabelAccessibilityIdentifier
+    case weekDayLabelAccessibilityIdentifier
+    case minTemperatureLabelAccessibilityIdentifier
+    case maxTemperatureLabelAccessibilityIdentifier
     
     var table: String {
         "Localizable"

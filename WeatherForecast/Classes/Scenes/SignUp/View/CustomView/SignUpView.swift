@@ -39,6 +39,7 @@ class SignUpView: UIView {
     private(set) lazy var titleSignIn: UILabel = {
         let label = UILabel()
         label.text = LocalizableWeatherForecast.titleAppLabel.localized
+        label.accessibilityIdentifier = LocalizableWeatherForecast.titleScreenAccessibilityIdentifier.localized
         label.font = .preferredFont(forTextStyle: .largeTitle)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -48,6 +49,7 @@ class SignUpView: UIView {
     private(set) lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = LocalizableWeatherForecast.emailPlaceholder.localized
+        textField.accessibilityIdentifier = LocalizableWeatherForecast.emailTextFieldAccessibilityIdentifier.localized
         textField.borderStyle = .roundedRect
         textField.keyboardType = .emailAddress
         textField.autocapitalizationType = .none
@@ -58,6 +60,7 @@ class SignUpView: UIView {
     private(set) lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = LocalizableWeatherForecast.passwordPlaceholder.localized
+        textField.accessibilityIdentifier = LocalizableWeatherForecast.passwordTextFieldAccessibilityIdentifier.localized
         textField.isSecureTextEntry = true
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -67,6 +70,7 @@ class SignUpView: UIView {
     private(set) lazy var confirmPasswordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = LocalizableWeatherForecast.confirmPasswordPlaceholder.localized
+        textField.accessibilityIdentifier = LocalizableWeatherForecast.confirmPasswordTextFieldAccessibilityIdentifier.localized
         textField.isSecureTextEntry = true
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -82,6 +86,7 @@ class SignUpView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .contrastColor
         button.layer.cornerRadius = Constants.twentyValue
+        button.accessibilityIdentifier = LocalizableWeatherForecast.signUpButtonAccessibilityIdentifier.localized
         return button
     }()
     

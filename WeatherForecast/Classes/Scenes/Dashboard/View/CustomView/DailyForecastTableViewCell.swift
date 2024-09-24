@@ -85,10 +85,14 @@ class DailyForecastTableViewCell: UITableViewCell {
     func loadData(weekDay: String?,
                   min: String?,
                   max: String?,
-                  icon: UIImage?) {
+                  icon: UIImage?,
+                  index: Int?) {
         weekDayLabel.text = weekDay
+        weekDayLabel.accessibilityIdentifier = "\(LocalizableWeatherForecast.weekDayLabelAccessibilityIdentifier.localized)_\(index ?? .zero)"
         minTemperatureLabel.text = "min \(min ?? "")"
+        minTemperatureLabel.accessibilityIdentifier = "\(LocalizableWeatherForecast.minTemperatureLabelAccessibilityIdentifier.localized)_\(index ?? .zero)"
         maxTemperatureLabel.text = "max \(max ?? "")"
+        maxTemperatureLabel.accessibilityIdentifier = "\(LocalizableWeatherForecast.maxTemperatureLabelAccessibilityIdentifier.localized)_\(index ?? .zero)"
         iconImageView.image = icon
     }
 }
@@ -109,5 +113,6 @@ extension DailyForecastTableViewCell: ViewCoded {
     func setupViews() {
         backgroundColor = .clear
         selectionStyle = .none
+        accessibilityElements = [weekDayLabel, minTemperatureLabel, maxTemperatureLabel]
     }
 }

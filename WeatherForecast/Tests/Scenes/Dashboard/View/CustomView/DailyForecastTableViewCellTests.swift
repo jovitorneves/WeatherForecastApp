@@ -46,7 +46,11 @@ class DailyForecastTableViewCellTests: XCTestCase {
         let image = UIImage(systemName: "sun.max") // or any valid image for testing
 
         // When
-        cell.loadData(weekDay: weekDay, min: minTemp, max: maxTemp, icon: image)
+        cell.loadData(weekDay: weekDay,
+                      min: minTemp,
+                      max: maxTemp,
+                      icon: image,
+                      index: .zero)
 
         // Then
         XCTAssertEqual(cell.weekDayLabel.text, weekDay)

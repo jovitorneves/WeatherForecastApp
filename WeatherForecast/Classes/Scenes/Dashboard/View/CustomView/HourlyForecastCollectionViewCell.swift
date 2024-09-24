@@ -80,10 +80,13 @@ class HourlyForecastCollectionViewCell: UICollectionViewCell {
     // MARK: - Load
     func loadData(time: String?,
                   icon: UIImage?,
-                  temp: String?) {
+                  temp: String?,
+                  index: Int?) {
         hourLabel.text = time
+        hourLabel.accessibilityIdentifier = "\(LocalizableWeatherForecast.hourLabelAccessibilityIdentifier.localized)_\(index ?? .zero)"
         iconImageView.image = icon
         temperatureLabel.text = temp
+        temperatureLabel.accessibilityIdentifier = "\(LocalizableWeatherForecast.temperatureLabelAccessibilityIdentifier.localized)_\(index ?? .zero)"
     }
 }
 

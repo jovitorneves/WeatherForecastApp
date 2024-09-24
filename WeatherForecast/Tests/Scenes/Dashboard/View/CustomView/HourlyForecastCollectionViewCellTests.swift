@@ -43,7 +43,10 @@ class HourlyForecastCollectionViewCellTests: XCTestCase {
         let image = UIImage(systemName: "sun.max") // or any valid image for testing
 
         // When
-        cell.loadData(time: time, icon: image, temp: temperature)
+        cell.loadData(time: time,
+                      icon: image,
+                      temp: temperature,
+                      index: .zero)
 
         // Then
         XCTAssertEqual(cell.hourLabel.text, time)

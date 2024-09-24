@@ -23,6 +23,12 @@ class SampleViewController: UIViewController {
         coordinator = WeatherForecastCoordinator(navigationController: navigationController ?? UINavigationController())
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        openButton?.accessibilityIdentifier = "openFrameworkButton"
+    }
+    
     // MARK: - Actions
     @IBAction func openButtonAction(_ sender: UIButton) {
         coordinator?.start()

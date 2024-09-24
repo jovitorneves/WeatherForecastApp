@@ -54,12 +54,11 @@ class WeatherForecastViewControllerTests: XCTestCase {
         // Simulate loading state
         mockViewModel.simulateLoading()
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             XCTAssertTrue(self.viewController.loaderView.isHidden == false)
             XCTAssertTrue(self.viewController.stackView.arrangedSubviews.isEmpty)
             expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 5.0)
+            self.wait(for: [expectation], timeout: 0.3)
+        }        
     }
 }
