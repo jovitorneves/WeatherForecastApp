@@ -4,7 +4,6 @@ platform :ios, '15.0'
 use_frameworks!
 
 def commons 
-  pod 'Alamofire', '~> 5.9'
 end
 
 target 'WeatherForecast' do
@@ -17,6 +16,7 @@ end
 
 target 'WeatherForecastTests' do
   commons
+  pod 'iOSSnapshotTestCase'
 end
 
 target 'WeatherForecastUITests' do

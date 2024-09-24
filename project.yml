@@ -42,6 +42,13 @@ schemes:
       targets:
         - name: WeatherForecastTests
           parallelizable: false
+      environmentVariables:
+        - variable: FB_REFERENCE_IMAGE_DIR
+          value: $(SOURCE_ROOT)/WeatherForecast/Tests/ReferenceImages
+          isEnabled: true
+        - variable: IMAGE_DIFF_DIR
+          value: $(SOURCE_ROOT)/WeatherForecast/Tests/FailureDiffs
+          isEnabled: true
   WeatherForecast-Sample:
     build:
       targets:
@@ -49,6 +56,9 @@ schemes:
     run:
       additionalOptions:
         zoobinObjects: true
+      commandLineArguments:
+        "-FIRDebugEnabled" : true
+        "-FIRAnalyticsDebugEnabled" : true
       config: Debug
       debugEnabled: true
   WeatherForecastUITests:
@@ -79,10 +89,8 @@ targets:
         ENABLE_TESTABILITY: YES
         BUILD_LIBRARY_FOR_DISTRIBUTION: YES
     postBuildScript:
-      - script: scripts/postBuild.sh
+      - script: scripts/swiftlint.sh
         name: Swiftlint
-    # dependencies:
-    #   - framework: Alamofire
 
   WeatherForecast-Sample:
     type: application
@@ -105,7 +113,7 @@ targets:
         codeSign: true
         embed: true
     postBuildScript:
-      - script: scripts/postBuild.sh
+      - script: scripts/swiftlint.sh
         name: Swiftlint
     
   WeatherForecastTests:
@@ -116,9 +124,13 @@ targets:
         embed: true
     sources: 
       - path: WeatherForecast/Tests
+        excludes: 
+          - "FailureDiffs/*"
+          - "ReferenceImages/*"
+          - "ReferenceImages_64/*"
         name: WeatherForecastTests
     postBuildScript:
-      - script: scripts/postBuild.sh
+      - script: scripts/swiftlint.sh
         name: Swiftlint
     settings:
       base:
@@ -137,7 +149,7 @@ targets:
       base:
         INFOPLIST_FILE: WeatherForecastUITests/Info.plist
         PRODUCT_BUNDLE_IDENTIFIER: com.vitorneves.WeatherForecastUITests
-agregateTargets:
+aggregateTargets:
   XCFramework:
     buildScripts:
       - script: scripts/buildxcframework.sh

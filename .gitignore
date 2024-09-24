@@ -42,6 +42,7 @@ Pods/
 Podfile.lock
 *.xcworkspace
 *.xcodeproj
+build/
 
 # Carthage
 #

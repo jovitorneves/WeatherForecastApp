@@ -16,7 +16,7 @@ Before starting, make sure you have the following requirements installed:
 - **Swift 6**: Main programming language.
 - **UIKit**: Standard library for building the graphical interface.
 - **XCTest, Unit and UI**: Used to do the tests.
-- **SnapshotTesting**: For snapshot testing.
+- **SnapshotTesting**: For snapshot testing. https://github.com/uber/ios-snapshot-test-case
 - **XcodeGen**: A tool for generating Xcode projects from YAML files. https://github.com/yonaskolb/XcodeGen
 - **URLSession**: Used to make project requests.
 - **MVVM-C (Model-View-ViewModel-Coordinator)**: Architectural pattern used in the project.
