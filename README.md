@@ -2,6 +2,22 @@
 
 This project is a basic authentication (login) system developed in Swift 6, using the MVVM-C (Model-View-ViewModel-Coordinator) architecture. The Weather Forecast App is configured with XcodeGen and includes support for unit testing, interface testing, and snapshot testing. Below are the installation instructions and a description of the main technologies and features implemented.
 
+## Table of Contents
+
+- [Requirements](#requirements)
+- [Technologies Used](#technologies-used)
+- [Screens](#screens)
+- [Test](#test)
+- [UI Test](#uitest)
+- [Features Implemented](#features-implemented)
+- [Folder Structure](#folder-structure)
+- [Installation](#installation)
+- [Troubleshooting](#troubleshooting)
+- [Versioning](#versioning)
+- [Contributions](#contributions)
+- [How to Contribute](#how-to-contribute)
+- [License](#license)
+
 ## Requirements
 
 Before starting, make sure you have the following requirements installed:
@@ -29,6 +45,18 @@ Before starting, make sure you have the following requirements installed:
   <img src="Gifs/Dashboard.gif" alt="Dashboard" width="45%" />
 </p>
 
+## Test
+
+<p align="center">
+  <img src="Snapshot/Tests/TestsCoverage.png" alt="TestsCoverage" width="100%" />
+  <img src="Snapshot/Tests/TestsCoverage_2.png" alt="TestsCoverage_2" width="100%" />
+</p>
+
+## UITest
+
+<p align="center">
+  <img src="Snapshot/UITests/UITestsCoverage.png" alt="TestsCoverage" width="100%" />
+</p>
 
 ## Features Implemented
 
